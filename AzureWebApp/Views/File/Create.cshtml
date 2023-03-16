@@ -1,0 +1,40 @@
+﻿@using AzureWebApp.Data.ViewModels
+@model BlobVM
+@{
+    ViewData["Title"] = "Create a new Post";
+}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Create a new Person</h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                            <div class="image-preview-container">
+                                <label for="file-upload">Upload Image</label>
+                            <input accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document"  asp-for="File" type="file" />
+                            </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
